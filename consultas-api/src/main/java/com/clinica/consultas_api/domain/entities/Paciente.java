@@ -13,7 +13,7 @@ public class Paciente {
     private UUID id;
 
     @Column(name = "cpf")
-    private String CPF;
+    private String cpf;
 
     private String nome;
 
@@ -25,12 +25,12 @@ public class Paciente {
         this.id = id;
     }
 
-    public String getCPF() {
-        return CPF;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setCPF(String CPF) {
-        this.CPF = CPF;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getNome() {

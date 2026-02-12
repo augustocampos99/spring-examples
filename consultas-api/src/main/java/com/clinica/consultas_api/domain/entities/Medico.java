@@ -13,7 +13,7 @@ public class Medico {
     private UUID id;
 
     @Column(name = "crm")
-    private String CRM;
+    private String crm;
 
     private String nome;
 
@@ -25,12 +25,12 @@ public class Medico {
         this.id = id;
     }
 
-    public String getCRM() {
-        return CRM;
+    public String getCrm() {
+        return crm;
     }
 
-    public void setCRM(String CRM) {
-        this.CRM = CRM;
+    public void setCrm(String crm) {
+        this.crm = crm;
     }
 
     public String getNome() {

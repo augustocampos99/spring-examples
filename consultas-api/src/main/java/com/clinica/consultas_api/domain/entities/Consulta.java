@@ -25,6 +25,14 @@ public class Consulta {
     @Column(name = "observacao")
     private String observacao;
 
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_medico", referencedColumnName = "id", insertable=false, updatable=false)
+    private Medico medico;
+
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_paciente", referencedColumnName = "id", insertable=false, updatable=false)
+    private Paciente paciente;
+
     public UUID getId() {
         return id;
     }
@@ -63,5 +71,21 @@ public class Consulta {
 
     public void setObservacao(String observacao) {
         this.observacao = observacao;
+    }
+
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
     }
 }

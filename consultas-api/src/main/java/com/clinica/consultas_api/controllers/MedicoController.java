@@ -1,8 +1,8 @@
 package com.clinica.consultas_api.controllers;
 
-import com.clinica.consultas_api.domain.entities.Paciente;
-import com.clinica.consultas_api.dtos.request.PacienteRequestDto;
-import com.clinica.consultas_api.services.PacienteService;
+import com.clinica.consultas_api.domain.entities.Medico;
+import com.clinica.consultas_api.dtos.request.MedicoRequestDto;
+import com.clinica.consultas_api.services.MedicoService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
@@ -13,43 +13,43 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("api/V1/pacientes")
-public class PacienteController {
+@RequestMapping("api/V1/medicos")
+public class MedicoController {
 
-    private final PacienteService pacienteService;
+    private final MedicoService medicoService;
 
-    public PacienteController(PacienteService pacienteService) {
-        this.pacienteService = pacienteService;
+    public MedicoController(MedicoService medicoService) {
+        this.medicoService = medicoService;
     }
 
     // No pageable pode passar size=10, page=0, etc...
     @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity getAll(Pageable pageable) {
-        Page<Paciente> result = this.pacienteService.findAll(pageable);
+        Page<Medico> result = this.medicoService.findAll(pageable);
         return ResponseEntity.ok(result);
     }
 
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity getById(@PathVariable UUID id) throws Exception {
-        var result = this.pacienteService.findById(id);
+        var result = this.medicoService.findById(id);
         return ResponseEntity.ok(result);
     }
 
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity create(@Validated @RequestBody PacienteRequestDto request) throws Exception {
-        var result = this.pacienteService.create(request);
+    public ResponseEntity create(@Validated @RequestBody MedicoRequestDto request) throws Exception {
+        var result = this.medicoService.create(request);
         return ResponseEntity.ok(result);
     }
 
     @PutMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity update(@PathVariable UUID id, @Validated @RequestBody PacienteRequestDto request) throws Exception {
-        var result = this.pacienteService.update(id, request);
+    public ResponseEntity update(@PathVariable UUID id, @Validated @RequestBody MedicoRequestDto request) throws Exception {
+        var result = this.medicoService.update(id, request);
         return ResponseEntity.ok(result);
     }
 
     @DeleteMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity delete(@PathVariable UUID id) throws Exception {
-        this.pacienteService.delete(id);
+        this.medicoService.delete(id);
         return ResponseEntity.noContent().build();
     }
 
