@@ -3,13 +3,12 @@ package com.clinica.consultas_api.services;
 import com.clinica.consultas_api.domain.entities.Paciente;
 import com.clinica.consultas_api.domain.repositories.PacienteRepository;
 import com.clinica.consultas_api.dtos.request.PacienteRequestDto;
-import com.clinica.consultas_api.exceptions.BadRequestException;
-import com.clinica.consultas_api.exceptions.NotFoundException;
+import com.clinica.consultas_api.infra.exceptions.BadRequestException;
+import com.clinica.consultas_api.infra.exceptions.NotFoundException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.UUID;
 
 @Service

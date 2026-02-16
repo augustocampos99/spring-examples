@@ -6,9 +6,8 @@ import com.clinica.consultas_api.domain.repositories.MedicoRepository;
 import com.clinica.consultas_api.domain.repositories.PacienteRepository;
 import com.clinica.consultas_api.dtos.request.ConsultaRequestDto;
 import com.clinica.consultas_api.dtos.response.ConsultaResponseDto;
-import com.clinica.consultas_api.exceptions.BadRequestException;
-import com.clinica.consultas_api.exceptions.NotFoundException;
-import org.springframework.data.domain.Page;
+import com.clinica.consultas_api.infra.exceptions.BadRequestException;
+import com.clinica.consultas_api.infra.exceptions.NotFoundException;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 

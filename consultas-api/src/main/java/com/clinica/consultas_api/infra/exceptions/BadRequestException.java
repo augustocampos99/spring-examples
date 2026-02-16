@@ -1,4 +1,4 @@
-package com.clinica.consultas_api.exceptions;
+package com.clinica.consultas_api.infra.exceptions;
 
 public class BadRequestException extends Exception {
 

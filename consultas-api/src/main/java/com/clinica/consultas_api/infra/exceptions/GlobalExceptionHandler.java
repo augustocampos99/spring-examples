@@ -1,7 +1,5 @@
-package com.clinica.consultas_api.config;
+package com.clinica.consultas_api.infra.exceptions;
 
-import com.clinica.consultas_api.exceptions.BadRequestException;
-import com.clinica.consultas_api.exceptions.NotFoundException;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpStatus;
