@@ -3,6 +3,7 @@ package com.clinica.consultas_api.controllers;
 import com.clinica.consultas_api.domain.entities.Medico;
 import com.clinica.consultas_api.dtos.request.MedicoRequestDto;
 import com.clinica.consultas_api.services.MedicoService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
@@ -14,6 +15,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("api/V1/medicos")
+@SecurityRequirement(name = "bearer-key")
 public class MedicoController {
 
     private final MedicoService medicoService;

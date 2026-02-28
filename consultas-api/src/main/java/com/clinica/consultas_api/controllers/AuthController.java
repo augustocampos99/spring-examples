@@ -4,6 +4,7 @@ import com.clinica.consultas_api.dtos.request.LoginRequestDto;
 import com.clinica.consultas_api.dtos.response.TokenResponseDto;
 import com.clinica.consultas_api.infra.security.SecurityJwtService;
 import com.clinica.consultas_api.services.UsuarioService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("api/V1/auth")
+@SecurityRequirement(name = "bearer-key")
 public class AuthController {
 
     @Autowired
